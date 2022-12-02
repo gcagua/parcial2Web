@@ -3,6 +3,7 @@ import table from 'react-bootstrap/Col';
 import React from "react";
 import { Link } from "react-router-dom";
 const { useEffect, useState } = require("react");
+import { FormattedMessage } from "react-intl";
 
 const Bands = () => {
     const[bands, setBands] = useState([]);
@@ -14,9 +15,7 @@ const Bands = () => {
         console.log(bands)
     }, [])
 
-    function bandaMasAntigua(){
-
-    }
+    function getmax(){}
 
     return (
         <table className="table">
@@ -30,14 +29,14 @@ const Bands = () => {
           </tr>
         </thead>
         <tbody>
-            {this.bands.map((band)=> (
+            {bands.map((band)=> (
                 <tr>
                 <th scope="row"></th>
                 <td>{band.id} </td>
-                <td> <Link to = "/bands/">{band.name}</Link></td>
-                <td>{band.country}</td>
-                <td>{band.genre}</td>
-                <td>{band.foundation_year}</td>
+                <td> <Link to = "/bands/"><FormattedMessage id="Nombre">{band.name}</FormattedMessage></Link></td>
+                <td><FormattedMessage id="Pais">{band.country}</FormattedMessage></td>
+                <td><FormattedMessage id="Genero">{band.genre}</FormattedMessage></td>
+                <td><FormattedMessage id="Fundacion">{band.foundation_year}</FormattedMessage></td>
                 </tr>
             ))}
         </tbody>
