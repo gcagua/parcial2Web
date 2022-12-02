@@ -5,10 +5,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {IntlProvider} from 'react-intl';
+import localeEsMessages from "./locales/es";
+import localeEnMessages from "./locales/en";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <IntlProvider locale="en">
+  <IntlProvider locale="en" messages= {localeEnMessages}>
     <React.StrictMode>
       <App />
     </React.StrictMode>
