@@ -17,7 +17,7 @@ const Bands = () => {
     function bandaMasAntigua(){
 
     }
-    
+
     return (
         <table className="table">
         <thead>
@@ -30,14 +30,16 @@ const Bands = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row"></th>
-            <td>{bands.id} </td>
-            <td> <Link to = "/bands/">{bands.name}</Link></td>
-            <td>{bands.country}</td>
-            <td>{bands.genre}</td>
-            <td>{bands.foundation_year}</td>
-          </tr>
+            {this.bands.map((band)=> (
+                <tr>
+                <th scope="row"></th>
+                <td>{band.id} </td>
+                <td> <Link to = "/bands/">{band.name}</Link></td>
+                <td>{band.country}</td>
+                <td>{band.genre}</td>
+                <td>{band.foundation_year}</td>
+                </tr>
+            ))}
         </tbody>
       </table>
     )
